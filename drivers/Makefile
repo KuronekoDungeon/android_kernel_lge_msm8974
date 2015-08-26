@@ -143,6 +143,9 @@ obj-$(CONFIG_MOBICORE_SUPPORT)  += gud/
 
 obj-$(CONFIG_CORESIGHT)		+= coresight/
 
+#exFAT
+obj-y				+= exfat/
+
 # LGE_BROADCAST_TDMB {
 obj-$(CONFIG_LGE_BROADCAST_TDMB) += broadcast/
 # LGE_BROADCAST_TDMB }
