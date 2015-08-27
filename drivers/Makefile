@@ -145,6 +145,7 @@ obj-$(CONFIG_CORESIGHT)		+= coresight/
 
 #exFAT
 obj-y				+= exfat/
+#obj-y				+= ufsd/
 
 # LGE_BROADCAST_TDMB {
 obj-$(CONFIG_LGE_BROADCAST_TDMB) += broadcast/

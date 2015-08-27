@@ -37,3 +37,7 @@ extern unsigned long msm_cpufreq_get_bw(void)
 #endif
 
 #endif
+
+void set_speed_pvs_bin(int speed, int pvs);
+void get_speed_bin(int *speed);
+void get_pvs_bin(int *pvs);

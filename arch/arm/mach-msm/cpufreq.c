@@ -82,6 +82,23 @@ struct cpufreq_suspend_t {
 
 static DEFINE_PER_CPU(struct cpufreq_suspend_t, cpufreq_suspend);
 
+static int speed_bin, pvs_bin;
+void set_speed_pvs_bin(int speed, int pvs)
+{
+	speed_bin = speed;
+	pvs_bin = pvs;
+}
+
+void get_speed_bin(int *speed)
+{
+	*speed = speed_bin;
+}
+
+void get_pvs_bin(int *pvs)
+{
+	*pvs = pvs_bin;
+}
+
 unsigned long msm_cpufreq_get_bw(void)
 {
 	return mem_bw[max_freq_index];
@@ -357,7 +374,7 @@ static void msm_cpu_late_resume(struct early_suspend *h)
 #endif
 }
 
-#ifdef CONFIG_CPU_FREQ_GOV_INTELLIDEMAND
+#ifdef CONFIG_HAS_EARLYSUSPEND
 static struct early_suspend msm_cpu_early_suspend_handler = {
 	.level = EARLY_SUSPEND_LEVEL_BLANK_SCREEN,
 	.suspend = msm_cpu_early_suspend,
